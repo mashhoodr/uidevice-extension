@@ -43,6 +43,9 @@
  iPad2,1   ->    iPad 2G, WiFi, K93
  iPad2,2   ->    iPad 2G, GSM 3G, K94
  iPad2,3   ->    iPad 2G, CDMA 3G, K95
+ iPad2,5   ->    (iPad Mini, WiFi)
+ iPad2,6   ->    (iPad Mini, GSM)
+ iPad2,7   ->    (iPad Mini, CDMA)
  iPad3,1   ->    (iPad 3G, WiFi)
  iPad3,2   ->    (iPad 3G, GSM)
  iPad3,3   ->    (iPad 3G, CDMA)
@@ -170,6 +173,9 @@
 
     // iPad
     if ([platform hasPrefix:@"iPad1"])              return UIDevice1GiPad;
+    if ([platform hasPrefix:@"iPad2,5"] ||
+        [platform hasPrefix:@"iPad2,6"] ||
+        [platform hasPrefix:@"iPad2,7"])            return UIDeviceiPadMini;
     if ([platform hasPrefix:@"iPad2"])              return UIDevice2GiPad;
     if ([platform hasPrefix:@"iPad3"])              return UIDevice3GiPad;
     if ([platform hasPrefix:@"iPad4"])              return UIDevice4GiPad;
@@ -215,6 +221,7 @@
         case UIDevice2GiPad : return IPAD_2G_NAMESTRING;
         case UIDevice3GiPad : return IPAD_3G_NAMESTRING;
         case UIDevice4GiPad : return IPAD_4G_NAMESTRING;
+        case UIDeviceiPadMini : return IPAD_MINI_NAMESTRING;
         case UIDeviceUnknowniPad : return IPAD_UNKNOWN_NAMESTRING;
             
         case UIDeviceAppleTV2 : return APPLETV_2G_NAMESTRING;
